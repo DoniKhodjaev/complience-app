@@ -5,11 +5,11 @@
   "homepage": "https://donikhodjaev.github.io/Compliance-App/",
   "type": "module",
   "scripts": {
-    "start": "vite",
+    "start": "vite --host",
     "build": "tsc && vite build",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "start-server": "node server.js",
     "electron": "electron .",
     "electron-build": "npm run build && electron ."
