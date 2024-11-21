@@ -5,7 +5,7 @@
   "homepage": "https://donikhodjaev.github.io/Compliance-App/",
   "type": "module",
   "scripts": {
-    "start": "vite --host",
+    "start": "npx http-server ./dist",
     "build": "tsc && vite build",
     "dev": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
