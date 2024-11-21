@@ -202,7 +202,7 @@ export default function App() {
 
   const handleUpload = async (messageText: string, comments: string) => {
     try {
-      const response = await axios.post('http://localhost:3001/api/process-swift', {
+      const response = await axios.post(import.meta.env.VITE_BACKEND_URL2+'/api/process-swift', {
         message: messageText,
       });
 
@@ -284,7 +284,7 @@ export default function App() {
   const handleDeleteMessage = async (id: string) => {
     try {
         // Attempt to delete the message from the backend
-        await axios.delete(`http://localhost:3001/api/delete-message/${id}`);
+        await axios.delete(import.meta.env.VITE_BACKEND_URL2+`/api/delete-message/${id}`);
     } catch (error) {
         console.error('Error deleting message from backend:', error);
     } finally {
@@ -302,7 +302,7 @@ export default function App() {
 const handleStatusChange = async (id: string, status: SwiftMessage['status']) => {
   try {
       // Update the status in the backend
-      await axios.patch(`http://localhost:3001/api/update-status/${id}`, { status });
+      await axios.patch(import.meta.env.VITE_BACKEND_URL2+`/api/update-status/${id}`, { status });
 
       // Update the status in the frontend state
       setMessages((prev) =>

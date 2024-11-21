@@ -30,7 +30,7 @@ export function SDNList() {
 
   const fetchSDNList = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/api/sdn-list');
+      const response = await axios.get(import.meta.env.VITE_BACKEND_URL1+'/api/sdn-list');
       setEntries(response.data);
     } catch (error) {
       console.error('Error fetching SDN list:', error);
@@ -39,7 +39,7 @@ export function SDNList() {
 
   const updateSDNList = () => {
     setIsUpdating(true);
-    axios.post('http://127.0.0.1:5000/api/update-sdn-list')
+    axios.post(import.meta.env.VITE_BACKEND_URL1+'api/update-sdn-list')
       .then((response) => {
         console.log(response.data.status);
         fetchSDNList();  // Re-fetch the updated SDN list
